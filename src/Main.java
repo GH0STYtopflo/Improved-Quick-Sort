@@ -1,5 +1,6 @@
 
 import Algorithms.Algorithm;
+import Algorithms.ImprovedQuickSort;
 import Algorithms.InsertionSort;
 import Algorithms.NormalQuickSort;
 import Random.VarLengthRandomArray;
@@ -43,24 +44,34 @@ public class Main {
         // Each algorithm receives an independent copy.
         int[] insertionArray = original.clone();
         int[] quickSortArray = original.clone();
+        int[] improvedQuickSortArray = original.clone();
 
         Algorithm[] algorithms = {
                 new InsertionSort(insertionArray),
+
                 new NormalQuickSort(
                         quickSortArray,
                         0,
                         quickSortArray.length - 1
-                )
+                ),
+
+                new ImprovedQuickSort(
+                        improvedQuickSortArray,
+                        0,
+                        improvedQuickSortArray.length - 1
+                        ),
         };
 
         String[] names = {
                 InsertionSort.NAME,
-                NormalQuickSort.NAME
+                NormalQuickSort.NAME,
+                ImprovedQuickSort.NAME
         };
 
         int[][] results = {
                 insertionArray,
-                quickSortArray
+                quickSortArray,
+                improvedQuickSortArray
         };
 
         for (int i = 0; i < algorithms.length; i++) {

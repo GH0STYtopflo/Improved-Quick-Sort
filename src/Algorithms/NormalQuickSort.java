@@ -1,7 +1,5 @@
 package Algorithms;
 
-import java.util.Arrays;
-
 public class NormalQuickSort extends Algorithm {
     public static final String NAME = "Normal Quick Sort";
 
@@ -41,6 +39,5 @@ public class NormalQuickSort extends Algorithm {
         // recursion starts here
         new NormalQuickSort(arr, start, j).sort(); // sub array to the left
         new NormalQuickSort(arr, j + 2, finish).sort(); // sub array to the right
-
     }
 }
